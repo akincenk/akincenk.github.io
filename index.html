@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cenk Akın – Operations leader and Python/AI engineer, Vancouver</title>
-  <meta name="description" content="Cenk Akın spent eight years leading customer-operations teams of up to 150 people across two countries. Today he builds the Python and AI systems that help operations teams do more with less. Based in Vancouver, BC.">
+  <meta name="description" content="Cenk Akın spent eight years leading customer operations at Turkcell and KKTCELL, with teams of up to 150 people. Today he builds the Python and AI systems that help operations teams do more with less. Based in Vancouver, BC.">
   <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://akincenk.github.io/">
@@ -12,7 +12,12 @@
   <meta property="og:title" content="Cenk Akın – Operations, engineered.">
   <meta property="og:description" content="Eight years leading operations teams of up to 150 people. Now building the software that helps them do more with less. Vancouver, BC.">
   <meta property="og:url" content="https://akincenk.github.io/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://akincenk.github.io/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cenk Akın – Operations, engineered.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://akincenk.github.io/assets/og.jpg">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1d1f'/%3E%3Ctext x='32' y='42' font-family='-apple-system,Helvetica,Arial,sans-serif' font-size='27' font-weight='600' fill='white' text-anchor='middle'%3ECA%3C/text%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
@@ -22,9 +27,10 @@
     "jobTitle": "Operations leader and Python/AI engineer",
     "email": "mailto:akincenk@gmail.com",
     "url": "https://akincenk.github.io/",
+    "image": "https://akincenk.github.io/assets/cenk.jpg",
     "address": {"@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA"},
     "sameAs": ["https://github.com/akincenk", "https://www.linkedin.com/in/cenk-akin-11b27929b/"],
-    "knowsAbout": ["Operations management", "Team leadership", "Workforce planning", "Python", "FastAPI", "PostgreSQL", "AI agents", "Process automation", "Inventory systems"]
+    "knowsAbout": ["Call centre operations", "CRM", "IVR design", "KPI frameworks", "Operations management", "Team leadership", "Workforce planning", "Python", "FastAPI", "PostgreSQL", "AI agents", "Process automation", "Inventory systems"]
   }
   </script>
   <style>
@@ -129,15 +135,27 @@
 
     /* Experience */
     .career { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hair); }
-    .career li {
+    .career > li {
       display: grid; grid-template-columns: 1fr 1.25fr; gap: 12px 48px;
       padding: 34px 0; border-bottom: 1px solid var(--hair);
     }
     .career h3 { font-size: 24px; letter-spacing: -.025em; line-height: 1.2; }
     .career .where { color: var(--quiet); margin-top: 4px; }
-    .career p { color: var(--quiet); line-height: 1.5; max-width: 52ch; }
-    .career p strong { color: var(--ink); font-weight: 600; }
-    @media (max-width: 720px) { .career li { grid-template-columns: 1fr; } }
+    .career li > div:last-child p, .wins { color: var(--quiet); line-height: 1.5; max-width: 54ch; }
+    .career .when { font-size: 14px; color: var(--quiet); font-weight: 500; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+    .career .tools { font-size: 14px; margin-top: 14px; }
+    .wins { margin: 14px 0 0; padding-left: 1.1em; }
+    .wins li { margin-top: 8px; }
+    .wins li::marker { color: var(--hair); }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+    .about .head { margin-bottom: 28px; }
+    .about p { color: var(--quiet); font-size: 19px; line-height: 1.55; max-width: 56ch; }
+    .about p + p { margin-top: 18px; }
+    .portrait { width: 100%; height: auto; border-radius: 22px; display: block; background: var(--surface); }
+    @media (max-width: 820px) { .about { grid-template-columns: 1fr; gap: 40px; } .portrait { max-width: 340px; } }
+    @media (max-width: 720px) { .career > li { grid-template-columns: 1fr; } }
 
     /* Work tiles: 4 x 2 */
     .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -147,6 +165,27 @@
       background: var(--surface); border-radius: 22px; padding: 30px 26px 26px;
       display: flex; flex-direction: column; min-height: 300px;
     }
+    .art { background: var(--page); border-radius: 14px; aspect-ratio: 2 / 1; display: grid; place-items: center; margin: -8px -6px 24px; }
+    .art svg { width: 84%; height: auto; overflow: visible; }
+    .art * { fill: none; stroke: none; }
+    .art .soft rect, .art .soft { fill: var(--hair); }
+    .art .softa rect { fill: color-mix(in srgb, var(--blue) 35%, transparent); }
+    .art .fill { fill: var(--blue); }
+    .art .line, .art .line * , .art .line path { stroke: var(--quiet); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .art .line.a { stroke: var(--blue); }
+    .art .dash { stroke: var(--blue); stroke-width: 1.6; stroke-dasharray: 4 5; }
+    .art .dash2 { stroke-dasharray: 5 6; }
+    .art .frame { stroke: var(--quiet); stroke-width: 2; stroke-linejoin: round; }
+    .art .ring { stroke: var(--quiet); stroke-width: 2; }
+    .art .ring2 { stroke: var(--blue); stroke-width: 1.6; opacity: .45; }
+    .art .softring { stroke: var(--hair); stroke-width: 10; }
+    .art .arc { stroke: var(--blue); stroke-width: 10; }
+    .art .arc2 { stroke: color-mix(in srgb, var(--blue) 45%, transparent); stroke-width: 10; }
+    .art .hl { fill: color-mix(in srgb, var(--blue) 22%, transparent); }
+    .art .bubble { fill: var(--hair); }
+    .art .bubblea { fill: var(--blue); }
+    .art .node circle { fill: var(--page); stroke: var(--quiet); stroke-width: 2.2; }
+    .art .bell { stroke: var(--quiet); stroke-width: 2.4; stroke-linejoin: round; }
     .tile .kind { font-size: 14px; color: var(--quiet); font-weight: 500; }
     .tile h3 { font-size: 23px; line-height: 1.15; letter-spacing: -.028em; margin-top: 8px; }
     .tile .what { color: var(--quiet); font-size: 15px; line-height: 1.47; margin-top: 12px; flex: 1; letter-spacing: -.012em; }
@@ -186,6 +225,7 @@
     <a class="name" href="#top">Cenk Akın</a>
     <nav aria-label="Main">
       <ul>
+        <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#capabilities">Capabilities</a></li>
@@ -211,42 +251,88 @@
 
   <section class="stage" aria-label="Summary">
     <div class="wrap">
-      <p>For eight years, I ran customer operations across two countries.</p>
-      <p>Staffing the floor. Meeting service levels every day. Holding the line on cost.</p>
-      <p>I saw how much of that work was repetitive. So I learned to automate it.</p>
+      <p>For eight years, I led customer operations at Turkcell and KKTCELL.</p>
+      <p>In Northern Cyprus, I built a national operator's customer operation from zero.</p>
+      <p>Later I saw how much of the daily work was repetitive. So I learned to automate it.</p>
       <p class="dim">Today I bring both: an operator's judgment and an engineer's toolkit.</p>
     </div>
   </section>
 
-  <section class="block" id="experience">
+  <section class="block" id="about">
+    <div class="wrap about">
+      <img class="portrait" src="assets/cenk.jpg" width="640" height="800" alt="Portrait of Cenk Akın">
+      <div>
+        <div class="head">
+          <h2>About</h2>
+        </div>
+        <p>I'm an operations leader who writes production software. I spent eight years managing customer operations for Turkcell, Türkiye's largest mobile operator, and for KKTCELL in Northern Cyprus. My teams numbered 100 to 150 people.</p>
+        <p>At KKTCELL, there was no customer operation when I arrived. I designed the customer-service and CRM operation end to end: the call centre, the back office, the IVR, every process and every KPI the business ran on.</p>
+        <p>Since 2012, I've worked independently and retrained as a software engineer. I now build the kind of systems I once wished my teams had. They forecast demand, plan staffing, track inventory and flag problems before a person has to go looking for them.</p>
+        <p>I live in Vancouver, BC. I'm looking for a role where leading people and building systems are part of the same job.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block follow" id="experience">
     <div class="wrap">
       <div class="head">
         <h2>Experience</h2>
-        <p>A career built on leading large teams, now extended into building the systems behind them.</p>
+        <p>From running the floor to building the software behind it.</p>
       </div>
-      <ul class="career">
+      <ol class="career">
         <li>
           <div>
-            <h3>Python and AI automation engineer</h3>
-            <p class="where">Independent, Vancouver, BC</p>
+            <p class="when">2012 – present</p>
+            <h3>Software engineer, independent</h3>
+            <p class="where">Self-employed</p>
           </div>
-          <p>I build and operate production software end to end, from database design to deployment. My services run unattended around the clock. They collect data on schedule, apply business rules and escalate only what needs a human decision. I work with <strong>FastAPI, PostgreSQL, Docker, GitHub Actions and LLM APIs</strong>.</p>
+          <div>
+            <p>After leaving corporate operations, I worked independently and moved into software engineering. Today I build and run production systems end to end, from database design to deployment. My services run unattended around the clock and escalate only what needs a human decision.</p>
+            <p class="tools">Python, FastAPI, PostgreSQL, Docker, GitHub Actions, LLM APIs</p>
+          </div>
         </li>
         <li>
           <div>
-            <h3>Operations management</h3>
-            <p class="where">KKTCELL, Northern Cyprus</p>
-          </div>
-          <p>I led customer operations for a national mobile operator, accountable for <strong>staffing, quality and service-level performance</strong>. I worked closely with the Türkiye operation to keep standards consistent across both countries.</p>
-        </li>
-        <li>
-          <div>
-            <h3>Operations management and team leadership</h3>
+            <p class="when">2011 – 2012</p>
+            <h3>Operations Manager</h3>
             <p class="where">Turkcell Global Bilgi, Türkiye</p>
           </div>
-          <p>I managed customer-operations teams of 100–150 people at Turkcell's customer-experience company. I owned the full people cycle: <strong>hiring, coaching, workforce planning, performance management and KPI reporting</strong>.</p>
+          <div>
+            <p>I returned to Turkcell's customer-operations company to lead large teams again, bringing back what I had learned from building an operation from scratch.</p>
+          </div>
         </li>
-      </ul>
+        <li>
+          <div>
+            <p class="when">2010 – 2011</p>
+            <h3>Unit Manager, Customer Services and CRM</h3>
+            <p class="where">KKTCELL, Northern Cyprus</p>
+          </div>
+          <div>
+            <p>I built the national mobile operator's customer-service and CRM operation from the ground up.</p>
+            <ul class="wins">
+              <li>Set up every unit from day one, including the call centre and the back office.</li>
+              <li>Designed the IVR and its call flows.</li>
+              <li>Wrote the operating processes and quality standards the teams worked to.</li>
+              <li>Defined the full KPI framework: service level, average handle time, first-contact resolution, abandonment rate, quality score and customer satisfaction.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="when">2004 – 2010</p>
+            <h3>Operations Manager</h3>
+            <p class="where">Turkcell Global Bilgi, Türkiye</p>
+          </div>
+          <div>
+            <p>I managed customer-operations teams of 100 to 150 people at the customer-experience arm of Türkiye's largest mobile operator.</p>
+            <ul class="wins">
+              <li>Owned the full people cycle: hiring, onboarding, coaching and performance reviews.</li>
+              <li>Ran workforce planning and shift scheduling to hold service levels through daily and seasonal peaks.</li>
+              <li>Reported team KPIs to senior management and led the improvement plans behind them.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -258,6 +344,7 @@
       </div>
       <div class="tiles">
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><g class="soft"><rect x="22" y="30" width="18" height="56" rx="3"/><rect x="50" y="18" width="18" height="68" rx="3"/><rect x="106" y="40" width="18" height="46" rx="3"/><rect x="134" y="24" width="18" height="62" rx="3"/><rect x="162" y="36" width="18" height="50" rx="3"/></g><rect class="fill" x="78" y="70" width="18" height="16" rx="3"/><path class="dash" d="M14 64H188"/><circle class="fill" cx="87" cy="56" r="4"/></svg></div>
           <p class="kind">Supply chain</p>
           <h3>Warehouse AI Suite</h3>
           <p class="what">Tracks SKUs, suppliers, stock and purchase orders in one place, and flags low inventory before it becomes a stockout.</p>
@@ -265,6 +352,7 @@
           <a class="go" href="https://github.com/akincenk/Warehouse-AI-Suite-" target="_blank" rel="noopener">View on GitHub</a>
         </article>
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><g class="soft"><rect x="24" y="62" width="14" height="24" rx="2"/><rect x="46" y="54" width="14" height="32" rx="2"/><rect x="68" y="58" width="14" height="28" rx="2"/><rect x="90" y="46" width="14" height="40" rx="2"/></g><g class="softa"><rect x="112" y="40" width="14" height="46" rx="2"/><rect x="134" y="34" width="14" height="52" rx="2"/><rect x="156" y="28" width="14" height="58" rx="2"/></g><path class="line" d="M24 48 46 40 68 44 90 30 104 28"/><path class="line a dash2" d="M104 28 126 22 148 16 170 12"/></svg></div>
           <p class="kind">Workforce planning</p>
           <h3>Demand and Staffing Optimizer</h3>
           <p class="what">Forecasts demand for every store and product, then turns it into a staffing plan that meets service-level targets.</p>
@@ -272,6 +360,7 @@
           <a class="go" href="https://github.com/akincenk/Retail-Demand-Staffing-Optimizer" target="_blank" rel="noopener">View on GitHub</a>
         </article>
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><rect class="frame" x="20" y="14" width="160" height="72" rx="8"/><path class="line" d="M20 32H180"/><g class="soft"><rect x="32" y="42" width="60" height="7" rx="3.5"/><rect x="32" y="57" width="46" height="7" rx="3.5"/><rect x="32" y="72" width="54" height="7" rx="3.5"/><rect x="110" y="42" width="30" height="7" rx="3.5"/><rect x="110" y="57" width="30" height="7" rx="3.5"/><rect x="110" y="72" width="30" height="7" rx="3.5"/></g><circle class="fill" cx="162" cy="45.5" r="5"/><circle class="fill" cx="162" cy="60.5" r="5"/><circle class="ring" cx="162" cy="75.5" r="4.5"/></svg></div>
           <p class="kind">Logistics</p>
           <h3>Warehouse Management System</h3>
           <p class="what">Inventory and order management with role-based permissions, so every user sees exactly what their job requires.</p>
@@ -279,6 +368,7 @@
           <a class="go" href="https://github.com/akincenk/warehouse-management-system" target="_blank" rel="noopener">View on GitHub</a>
         </article>
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><path class="frame" d="M30 10H84V84L77 79 70 84 63 79 57 84 50 79 43 84 37 79 30 84Z"/><g class="soft"><rect x="40" y="22" width="34" height="6" rx="3"/><rect x="40" y="36" width="26" height="5" rx="2.5"/><rect x="40" y="47" width="30" height="5" rx="2.5"/><rect x="40" y="58" width="22" height="5" rx="2.5"/></g><path class="line" d="M100 50H118"/><path class="line" d="M112 44 118 50 112 56"/><circle class="softring" cx="154" cy="50" r="26"/><path class="arc" d="M154 24A26 26 0 0 1 178.7 58"/><path class="arc2" d="M178.7 58A26 26 0 0 1 140 71.9"/></svg></div>
           <p class="kind">Data extraction</p>
           <h3>Receipt OCR and Analytics</h3>
           <p class="what">Turns paper receipts into structured data and reports spend by vendor, category and period.</p>
@@ -286,6 +376,7 @@
           <a class="go" href="https://github.com/akincenk/Receipt-OCR-Analytics-Platform" target="_blank" rel="noopener">View on GitHub</a>
         </article>
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><rect class="frame" x="26" y="14" width="56" height="72" rx="6"/><g class="soft"><rect x="36" y="26" width="36" height="5" rx="2.5"/><rect x="36" y="37" width="30" height="5" rx="2.5"/><rect x="36" y="48" width="36" height="5" rx="2.5"/><rect x="36" y="59" width="24" height="5" rx="2.5"/></g><rect class="hl" x="34" y="46" width="40" height="9" rx="3"/><rect class="bubble" x="104" y="20" width="72" height="22" rx="11"/><rect class="bubblea" x="96" y="52" width="80" height="28" rx="14"/><path class="line" d="M82 50H94"/></svg></div>
           <p class="kind">Document AI</p>
           <h3>InsightAI</h3>
           <p class="what">Ask a question in plain English and get the answer straight from a stack of PDFs.</p>
@@ -293,6 +384,7 @@
           <a class="go" href="https://github.com/akincenk/insightai" target="_blank" rel="noopener">View on GitHub</a>
         </article>
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><path class="line" d="M16 70 34 62 50 66 66 54 82 58 98 48 114 52 128 22 142 50 158 44 174 46 188 40"/><circle class="ring2" cx="128" cy="22" r="9"/><circle class="fill" cx="128" cy="22" r="3.5"/><path class="dash" d="M14 86H188"/></svg></div>
           <p class="kind">Real-time analytics</p>
           <h3>Tradewatch</h3>
           <p class="what">Monitors market trades in real time and surfaces unusual activity on a live dashboard.</p>
@@ -300,6 +392,7 @@
           <a class="go" href="https://github.com/akincenk/Tradewatch" target="_blank" rel="noopener">View on GitHub</a>
         </article>
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><g class="line"><path d="M100 50 52 26M100 50 54 76M100 50 150 22M100 50 152 74M100 50 176 50M52 26 54 76M150 22 176 50 152 74"/></g><g class="node"><circle cx="52" cy="26" r="7"/><circle cx="54" cy="76" r="7"/><circle cx="150" cy="22" r="7"/><circle cx="152" cy="74" r="7"/><circle cx="176" cy="50" r="6"/></g><circle class="fill" cx="100" cy="50" r="13"/></svg></div>
           <p class="kind">AI system</p>
           <h3>Personal AI Assistant</h3>
           <p class="what">A local-first AI assistant running 24/7 on my own hardware, with source-linked memory, one-command agents and strict spending limits.</p>
@@ -307,6 +400,7 @@
           <p class="private">Private, demo on request</p>
         </article>
         <article class="tile">
+          <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><path class="line" d="M14 56H58L68 34 80 74 92 44 100 56H136"/><path class="dash" d="M136 56H150"/><path class="bell" d="M168 30a12 12 0 0 1 12 12v12l5 7h-34l5-7V42a12 12 0 0 1 12-12Z"/><path class="line a" d="M163 66a5 5 0 0 0 10 0"/><circle class="fill" cx="180" cy="30" r="5"/></svg></div>
           <p class="kind">Automation</p>
           <h3>Unattended Monitoring</h3>
           <p class="what">A suite of scheduled services that watch public data sources, apply business rules and alert by email, Telegram or voice when something changes.</p>
