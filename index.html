@@ -1,275 +1,351 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cenk's Diary</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cenk Akın · Operations Leader &amp; Python / AI Engineer · Vancouver</title>
+  <meta name="description" content="Cenk Akın: 8 years leading 100–150 person operations teams across two countries, now building Python, FastAPI and AI automation systems for operations, logistics and data. Based in Vancouver, BC.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="canonical" href="https://akincenk.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Cenk Akın · Operations Leader & Python / AI Engineer">
+  <meta property="og:description" content="I lead people and build the software that makes operations run themselves. FastAPI, PostgreSQL, AI agents, automation. Vancouver, BC.">
+  <meta property="og:url" content="https://akincenk.github.io/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ECA%3C/text%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Cenk Akın",
+    "jobTitle": "Operations Leader & Python / AI Engineer",
+    "email": "mailto:akincenk@gmail.com",
+    "url": "https://akincenk.github.io/",
+    "address": {"@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA"},
+    "sameAs": ["https://github.com/akincenk", "https://www.linkedin.com/in/cenk-akin-11b27929b/"],
+    "knowsAbout": ["Operations management", "Team leadership", "Python", "FastAPI", "PostgreSQL", "AI agents", "Process automation", "Warehouse and inventory systems"]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #ffffff; --bg-alt: #f5f7fb; --card: #ffffff; --text: #0f172a; --muted: #5b6577;
+      --line: #e3e8f0; --accent: #2563eb; --on-accent: #ffffff; --accent-soft: #e8efff; --shadow: 0 1px 2px rgba(15,23,42,.06), 0 8px 24px rgba(15,23,42,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220; --bg-alt: #0f1829; --card: #121c30; --text: #e6ebf4; --muted: #97a3b8;
+        --line: #1f2b42; --accent: #60a5fa; --on-accent: #0b1220; --accent-soft: #15233d; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 88px 0; }
+    section.alt { background: var(--bg-alt); }
+    h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); }
+    .eyebrow { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .lede { color: var(--muted); max-width: 720px; margin: 14px 0 0; font-size: 1.08rem; }
+    .section-head { margin-bottom: 44px; }
 
-    <!--NAV BAR-->
+    /* nav */
+    header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-weight: 800; color: var(--text); font-size: 1.05rem; }
+    .brand span { color: var(--accent); }
+    nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+    nav ul a { color: var(--muted); font-size: .94rem; font-weight: 500; }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+    @media (max-width: 760px) { nav ul { display: none; } }
 
-    <nav class="navbar navbar-expand-lg bg-dark">
-      <div class="container py-1">
-        <a class="navbar-brand text-light fs-6" href="#">Cenk's Diary</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-light fs-6" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light fs-6" href="#">My Story</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light fs-6" href="#">Now</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light fs-6" href="#">TIL</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light fs-6" href="#">Archive</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    /* hero */
+    .hero { padding: 104px 0 96px; }
+    .hero h1 { font-size: clamp(2.3rem, 5.4vw, 3.9rem); font-weight: 800; max-width: 900px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero .lede { font-size: 1.2rem; max-width: 760px; margin-top: 22px; }
+    .status { display: inline-flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 600; color: var(--text); background: var(--accent-soft); border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; margin-bottom: 26px; }
+    .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.18); }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: .98rem; border: 1px solid var(--line); color: var(--text); background: var(--card); }
+    .btn:hover { text-decoration: none; border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+    .btn.primary:hover { filter: brightness(1.08); }
+
+    /* 4-up grids */
+    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 1020px) { .grid4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .grid4 { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .card h3 { font-size: 1.06rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: .94rem; margin: 0; }
+    .icon { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); margin-bottom: 16px; }
+    .icon svg { width: 22px; height: 22px; }
+
+    /* stats */
+    .stat { text-align: left; }
+    .stat b { display: block; font-size: 2.3rem; font-weight: 800; color: var(--accent); line-height: 1.1; }
+    .stat span { color: var(--muted); font-size: .94rem; }
+
+    /* about */
+    .about { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: start; }
+    @media (max-width: 900px) { .about { grid-template-columns: 1fr; gap: 36px; } }
+    .about p { margin: 0 0 16px; }
+    .timeline { border-left: 2px solid var(--line); padding-left: 24px; display: grid; gap: 26px; }
+    .timeline div { position: relative; }
+    .timeline div::before { content: ""; position: absolute; left: -31px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+    .timeline h3 { font-size: 1.02rem; }
+    .timeline small { color: var(--accent); font-weight: 600; font-size: .84rem; }
+    .timeline p { color: var(--muted); margin: 6px 0 0; font-size: .94rem; }
+
+    /* projects */
+    .project .tag { font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .project p { flex: 1; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .chips li { font-size: .74rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--text); }
+    .project .links { margin-top: 18px; font-size: .9rem; font-weight: 600; }
+    .project .links span { color: var(--muted); font-weight: 500; }
+
+    /* skills */
+    .skills ul { list-style: none; margin: 4px 0 0; padding: 0; color: var(--muted); font-size: .94rem; }
+    .skills li { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+    .skills li:last-child { border-bottom: 0; }
+
+    /* contact */
+    .contact { text-align: center; }
+    .contact .lede { margin-left: auto; margin-right: auto; }
+    .contact .cta { justify-content: center; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .88rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="#top">Cenk Akın<span>.</span></a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">What I do</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <!--NAV BAR END-->
+<main id="top">
 
-    <!--HERO CONTENT-->
-
-    <div class="bg-dark text-light">
-      <figure class="text-startr figure">
-         <img src="https://images.unsplash.com/reserve/91JuTaUSKaMh2yjB1C4A_IMG_9284.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDZ8fGpvdXJuZXklMjBoaXRjaGhpa2VyfGVufDB8fHx8MTY3NzYxODkwOA&ixlib=rb-4.0.3&q=80&w=2000" target="_blank" alt="#" class="w-100">
-         <figcaption class="figure-caption">
-          <a href="http://unsplash.com/@mukukostudio" target="_blank" class="text-decoration-none text-secondary">Photo by Mukuko Studio / Unsplash</a>
-         </figcaption>
-      </figure>
-        <div class="countainer py-1">
-          <div class="col-sm-6 position-absolute top-50 end-0 translate-middle-y text-light">
-            <h1 class=" display-4 fw-bold">Diaries of a Developer</h1>
-            <p class="lead text-center">C.A</p>
-          </div>  
-          <div class="col-sm-6"></div>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="status">Open to full-time roles · Vancouver, BC</div>
+      <h1>I lead teams and build the software that makes <em>operations run themselves</em>.</h1>
+      <p class="lede">Eight years managing 100–150 person operations teams across two countries, now combined with hands-on engineering in Python, FastAPI and AI automation. I understand the floor <strong>and</strong> the code, so what I build actually gets used.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:akincenk@gmail.com?subject=Opportunity%20for%20Cenk%20Akin">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/cenk-akin-11b27929b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/akincenk" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
+  </section>
 
-    <!--HERO CONTENT END-->
+  <!-- STATS -->
+  <section class="alt" style="padding: 56px 0;">
+    <div class="wrap grid4">
+      <div class="stat"><b>8 yrs</b><span>people &amp; operations management</span></div>
+      <div class="stat"><b>150</b><span>team members led at peak</span></div>
+      <div class="stat"><b>2</b><span>countries managed across</span></div>
+      <div class="stat"><b>24/7</b><span>automation systems I run in production</span></div>
+    </div>
+  </section>
 
-    <!--COROUSEL-->
-
-    <!--COROUSEL END-->
-
-    <!--PROJECT-->
-
-    <div class="bg-dark text-light">
-      <div class="container">
-        <div class="row py-1">
-          <div class="col-sm-8">
-            <figure class="figure">
-               <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wl8fHJlYWRpbmclMjBwYXBlcnxlbnwwfHx8fDE2ODc4NDg4NDh8MA&ixlib=rb-4.0.3&q=80&w=700" target="_blank" class="figure-img img-fluid rounded img-thumbnail" alt="#" class="w-100">
-               <figcaption class="figure-caption">
-                <a href="https://unsplash.com/@impatrickt" target="_blank" class="text-decoration-none text-secondary">Photo by Patrick Tomasso / Unsplash</a>
-               </figcaption>
-            </figure>
-          </div>  
-          <div class="col-sm-4">
-            <div class=" text-center display-4"><h2>Reading List</h2></div>
-            <div class=""> <p>My valuable list of books and articles that I have read before and want to read! ✨</p>
-              
-              
-            </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>Operations experience, engineering execution</h2>
+        <p class="lede" style="margin-bottom: 22px;">Most engineers have never run a shift. Most managers can't ship code. I do both.</p>
+        <p>I built my career in large-scale customer operations at <strong>Turkcell Global Bilgi</strong>, Turkcell's customer-experience company, and <strong>KKTCELL</strong> in Northern Cyprus. I led teams of 100–150 people across two countries. That meant hiring, training, scheduling, quality, KPIs and the daily job of keeping service levels up while costs stay down.</p>
+        <p>Running those operations showed me how much time goes into manual, repetitive work. So I learned to automate it. Today I build backend services, data pipelines and AI agents in Python. Recent work includes inventory and purchase-order systems, demand forecasting and staffing optimization, OCR analytics, and unattended monitoring services that run around the clock.</p>
+        <p>I'm based in Vancouver, BC. I'm looking for a role where both skill sets count: operations or team leadership, warehouse and logistics, or a technical role close to the business.</p>
+      </div>
+      <div class="timeline" aria-label="Experience">
+        <div>
+          <small>Now · Vancouver, BC</small>
+          <h3>Python &amp; AI automation engineer</h3>
+          <p>Designing and running backend services, AI agents and scheduled automation: FastAPI, PostgreSQL, Docker, GitHub Actions, LLM APIs.</p>
+        </div>
+        <div>
+          <small>KKTCELL · Northern Cyprus</small>
+          <h3>Operations management</h3>
+          <p>Led customer-operations teams and processes for a national mobile operator. Responsible for staffing, quality and service targets.</p>
+        </div>
+        <div>
+          <small>Turkcell Global Bilgi · Türkiye</small>
+          <h3>Operations management &amp; team leadership</h3>
+          <p>Managed large customer-operations teams: hiring, coaching, workforce planning, performance management and KPI reporting.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!--PROJECT END-->
-
-    <!--PRODUCT 1-->
-
-    <div class="container">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="card bg-dark text-light">
-        <figure class="figure"></figure>
-        <img src="https://images.unsplash.com/photo-1603575448360-153f093fd0b2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=anthony-riera--ZZ7I31c0B8-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-        <figcaption class="figure-caption">
-         <a href="https://unsplash.com/@frenchriera" target="_blank" class="text-decoration-none text-secondary">Photo by Anthony Riera / Unsplash</a> 
-        </figcaption>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Jul 27, 2023 / 4 min read</small></p>
-        </div>
+  <!-- SERVICES -->
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What I do</span>
+        <h2>Where I add value from day one</h2>
       </div>
-      <div class="card bg-dark text-light">
-        <figure class="figure"></figure>
-        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=ilya-pavlov-OqtafYT5kTw-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-        <figcaption class="figure-caption">
-         <a href="https://unsplash.com/@ilyapavlov" target="_blank" class="text-decoration-none text-secondary">Photo by Ilya Pavlov / Unsplash</a> 
-        </figcaption>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text"><small class="text-muted">Aug 9, 2023 / 5 min read</small></p>
+      <div class="grid4">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20c0-2.8-1.6-4.9-4-5.7"/></svg></div>
+          <h3>Team &amp; operations leadership</h3>
+          <p>Hiring, coaching, scheduling and KPI management for large frontline teams. Calm under pressure, clear on targets.</p>
         </div>
-      </div>
-      <div class="card bg-dark text-light">
-        <figure class="figure"></figure>
-        <img src="https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=charlesdeluvio-pjAH2Ax4uWk-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-        <figcaption class="figure-caption">
-         <a href="https://unsplash.com/@charlesdeluvio" target="_blank" class="text-decoration-none text-secondary">Photo by Charles de Luvio / Unsplash</a> 
-        </figcaption>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <p class="card-text"><small class="text-muted">Aug 27, 2023 / 3 min read</small></p>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M8 20v-6h8v6M8 14h8"/></svg></div>
+          <h3>Warehouse &amp; inventory systems</h3>
+          <p>SKU, supplier, stock and purchase-order backends with low-stock alerts. Built around how a warehouse really works.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+          <h3>Process automation &amp; AI agents</h3>
+          <p>Scheduled jobs and AI agents that monitor sources, apply business rules and alert only when something actually matters.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <h3>Data, forecasting &amp; reporting</h3>
+          <p>Demand forecasting, staffing plans, OCR extraction and analytics APIs that turn raw operational data into decisions.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Selected work</span>
+        <h2>Projects</h2>
+        <p class="lede">Production-style builds: database migrations, containers, CI and documentation from the first version.</p>
+      </div>
+      <div class="grid4">
+        <article class="card project">
+          <div class="tag">Supply chain</div>
+          <h3>Warehouse AI Suite</h3>
+          <p>Backend for SKUs, suppliers, inventory and purchase orders, with automatic low-stock alerts.</p>
+          <ul class="chips"><li>FastAPI</li><li>PostgreSQL</li><li>Alembic</li><li>Docker</li></ul>
+          <div class="links"><a href="https://github.com/akincenk/Warehouse-AI-Suite-" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+        <article class="card project">
+          <div class="tag">Workforce planning</div>
+          <h3>Retail Demand &amp; Staffing Optimizer</h3>
+          <p>Forecasts store × SKU demand and generates staffing plans that hit service-level targets.</p>
+          <ul class="chips"><li>FastAPI</li><li>Forecasting</li><li>PostgreSQL</li><li>CI</li></ul>
+          <div class="links"><a href="https://github.com/akincenk/Retail-Demand-Staffing-Optimizer" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+        <article class="card project">
+          <div class="tag">Logistics</div>
+          <h3>Warehouse Management System</h3>
+          <p>Inventory and order API with role-based access control and secure JWT authentication.</p>
+          <ul class="chips"><li>FastAPI</li><li>SQLAlchemy</li><li>JWT</li><li>RBAC</li></ul>
+          <div class="links"><a href="https://github.com/akincenk/warehouse-management-system" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+        <article class="card project">
+          <div class="tag">Data extraction</div>
+          <h3>Receipt OCR &amp; Analytics</h3>
+          <p>Extracts structured data from receipts and serves spend, vendor and category analytics.</p>
+          <ul class="chips"><li>Tesseract OCR</li><li>FastAPI</li><li>PostgreSQL</li><li>Docker</li></ul>
+          <div class="links"><a href="https://github.com/akincenk/Receipt-OCR-Analytics-Platform" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+        <article class="card project">
+          <div class="tag">Document AI</div>
+          <h3>InsightAI</h3>
+          <p>Ask questions in plain language and get answers pulled from inside PDF documents.</p>
+          <ul class="chips"><li>Vector search</li><li>OpenAI</li><li>PyMuPDF</li><li>FastAPI</li></ul>
+          <div class="links"><a href="https://github.com/akincenk/insightai" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+        <article class="card project">
+          <div class="tag">Real-time analytics</div>
+          <h3>Tradewatch</h3>
+          <p>Streams live crypto trades and detects unusual market activity, with a live dashboard.</p>
+          <ul class="chips"><li>WebSockets</li><li>Redis</li><li>Plotly Dash</li><li>Pytest</li></ul>
+          <div class="links"><a href="https://github.com/akincenk/Tradewatch" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+        <article class="card project">
+          <div class="tag">AI system · private</div>
+          <h3>Personal AI Assistant</h3>
+          <p>Local-first assistant running 24/7 on my own hardware: memory with linked sources, one-command agents, spend caps, self-evaluation.</p>
+          <ul class="chips"><li>Python</li><li>LLM agents</li><li>Encryption</li></ul>
+          <div class="links"><span>Demo on request</span></div>
+        </article>
+        <article class="card project">
+          <div class="tag">Automation · private</div>
+          <h3>Unattended Monitoring Pipelines</h3>
+          <p>A family of scheduled services that watch public data sources, apply rule-based filters and send email, Telegram and voice alerts. Retry and outage handling built in.</p>
+          <ul class="chips"><li>GitHub Actions</li><li>Python</li><li>Alerting</li></ul>
+          <div class="links"><span>Demo on request</span></div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <!--PRODUCT 1 END-->
-
-    <!--PRODUCT 2-->
-
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card bg-dark text-light">
-          <figure class="figure"></figure>
-          <img src="https://images.unsplash.com/photo-1534137667199-675a46e143f3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=markus-spiske-GDP_CXFHiuI-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-          <figcaption class="figure-caption">
-           <a href="https://unsplash.com/@markusspiske" target="_blank" class="text-decoration-none text-secondary">Photo by Markus Spiske / Unsplash</a> 
-          </figcaption>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Jul 27, 2023 / 4 min read</small></p>
-          </div>
+  <!-- SKILLS -->
+  <section id="skills" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Skills</span>
+        <h2>Toolbox</h2>
+      </div>
+      <div class="grid4 skills">
+        <div class="card">
+          <h3>Leadership &amp; operations</h3>
+          <ul><li>Team management (100–150)</li><li>Hiring, coaching, training</li><li>Workforce planning &amp; scheduling</li><li>KPI &amp; quality management</li><li>Process improvement</li></ul>
         </div>
-        <div class="card bg-dark text-light">
-          <figure class="figure"></figure>
-          <img src="https://images.unsplash.com/photo-1614790871804-fe037bdc1214?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=diego-gennaro-RSvJQ-IP_pk-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-          <figcaption class="figure-caption">
-           <a href="https://unsplash.com/@_nnaro_" target="_blank" class="text-decoration-none text-secondary">Photo by Diego Gennaro / Unsplash</a> 
-          
-          </figcaption>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Aug 9, 2023 / 5 min read</small></p>
-          </div>
+        <div class="card">
+          <h3>Backend engineering</h3>
+          <ul><li>Python · FastAPI</li><li>Django · Flask</li><li>SQLAlchemy · Pydantic</li><li>REST API design</li><li>Auth: OAuth2, JWT, RBAC</li></ul>
         </div>
-        <div class="card bg-dark text-light">
-          <figure class="figure"></figure>
-          <img src="https://images.unsplash.com/photo-1624996752380-8ec242e0f85d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=michael-baccin-XopauR-Nagk-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-          <figcaption class="figure-caption">
-           <a href="https://unsplash.com/@michaelbaccin" target="_blank" class="text-decoration-none text-secondary">Photo by Michael Baccin / Unsplash</a>  
-          </figcaption>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text"><small class="text-muted">Aug 27, 2023 / 3 min read</small></p>
-          </div>
+        <div class="card">
+          <h3>Data &amp; AI</h3>
+          <ul><li>PostgreSQL · Redis</li><li>Pandas · scikit-learn</li><li>Forecasting &amp; analytics</li><li>OCR · vector search</li><li>LLM APIs &amp; agents</li></ul>
+        </div>
+        <div class="card">
+          <h3>Delivery &amp; languages</h3>
+          <ul><li>Docker · Docker Compose</li><li>GitHub Actions CI/CD</li><li>Alembic · Pytest</li><li>Linux · Nginx</li><li>English · Turkish</li></ul>
         </div>
       </div>
     </div>
+  </section>
 
-    <!--PRODUCT 2 END-->
-
-    <!--PRODUCT 3-->
-
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card bg-dark text-light">
-          <figure class="figure"></figure>
-          <img src="https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=joshua-sortino-LqKhnDzSF-8-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-          <figcaption class="figure-caption">
-           <a href="https://unsplash.com/@sortino" target="_blank" class="text-decoration-none text-secondary">Photo by Joshua Sortino / Unsplash</a> 
-          </figcaption>
-          <div class="card-body">
-            <h5 class="card-title">Card Title</h5>
-            <p class="card-text">This is a wider card with supporting text 
-              below as a natural lead-in to additional content. 
-              This card has even longer content than the first 
-              to show that equal height action.
-
-            </p>
-            <p class="card-text"><small class="text-muted">Jul 27, 2023 / 4 min read</small></p>
-          </div>
-        </div>
-        <div class="card bg-dark text-light">
-          <figure class="figure"></figure>
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=nasa-Q1p7bh3SHj8-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-          <figcaption class="figure-caption">
-           <a href="https://unsplash.com/@nasa" target="_blank" class="text-decoration-none text-secondary">Photo by NASA / Unsplash</a> 
-          </figcaption>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Aug 9, 2023 / 5 min read</small></p>
-          </div>
-        </div>
-        <div class="card bg-dark text-light">
-          <figure class="figure"></figure>
-          <img src="https://images.unsplash.com/photo-1523274620588-4c03146581a1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=ev-gpjvRZyavZc-unsplash.jpg&w=640" target="_blank" class="card-img-top img-thumbnail" alt="#">
-          <figcaption class="figure-caption">
-           <a href="https://unsplash.com/@ev" target="_blank" class="text-decoration-none text-secondary">Photo by Ev / Unsplash</a> 
-          </figcaption>
-          <div class="card-body">
-            <h5 class="card-title">Big Data: The Driving Force of the Digital Age</h5>
-            <p class="card-text">In today's digital age, data is being generated
-               at an unprecedented pace. This data, often referred to as 
-               "big data," is the lifeblood of the modern world. It encompasses 
-               vast volumes of information that are collected, processed, 
-               and analyzed to extract valuable insights. This article explores 
-               the multifaceted realm of big data, its significance, 
-               applications, challenges, and the future it promises.
-            </p>
-            <p class="card-text"><small class="text-muted">Aug 27, 2023 / 3 min read</small></p>
-          </div>
-        </div>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's talk about your team</h2>
+      <p class="lede">Hiring for operations, team leadership, warehouse and logistics, or a technical role close to the business? I can start a conversation this week.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:akincenk@gmail.com?subject=Opportunity%20for%20Cenk%20Akin">akincenk@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/cenk-akin-11b27929b/" target="_blank" rel="noopener">Connect on LinkedIn</a>
       </div>
     </div>
+  </section>
 
-    <!--PRODUCT 3 END-->   
+</main>
 
-    <!--FOOTER-->
+<footer>
+  <div class="wrap">
+    <span>© 2026 Cenk Akın · Vancouver, BC</span>
+    <span><a href="https://github.com/akincenk" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/cenk-akin-11b27929b/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:akincenk@gmail.com">Email</a></span>
+  </div>
+</footer>
 
-    <div class="container py-1">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center border-top">
-        
-        <p class="text-muted text-center">Cenk's Diary © 2023</p>
-        <p class="text-muted">Powered by AI</p>
-        <div class="container">
-          <ul class="nav justify-content-center">
-            <li class="nav-item"><a href="https://twitter.com/akin_cenk" target="_blank" class="nav-link px-2 text-muted">Twitter</a></li>
-            <li class="nav-item"><a href="https://github.com/akincenk" target="_blank" class="nav-link px-2 text-muted">GitHub</a></li>
-            <li class="nav-item"><a href="https://www.instagram.com/cenkakin/" target="_blank" class="nav-link px-2 text-muted">Instagram</a></li>
-        </div>
-      
-    
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-        
-        <div class="container">
-          <ul class="nav justify-content-center text-top pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">My Story</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Now</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Archive</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TIL</a></li>
-          </ul>
-        </div>
-      </footer>
-    </div>
-    
-    <!--FOOTER END-->
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
