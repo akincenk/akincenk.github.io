@@ -134,6 +134,7 @@
     .head p { color: var(--quiet); font-size: clamp(19px, 2vw, 21px); line-height: 1.38; margin-top: 14px; max-width: 46ch; }
 
     /* Experience */
+    .timeline { display: block; width: 100%; height: auto; border-radius: 22px; margin-bottom: 56px; background: #0c1b2a; }
     .career { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hair); }
     .career > li {
       display: grid; grid-template-columns: 1fr 1.25fr; gap: 12px 48px;
@@ -279,6 +280,10 @@
         <h2>Experience</h2>
         <p>From running the floor to building the software behind it.</p>
       </div>
+      <picture>
+        <source media="(max-width: 640px)" srcset="assets/timeline-mobile.jpg" width="1080" height="1500">
+        <img class="timeline" src="assets/timeline.jpg" width="2400" height="900" loading="lazy" decoding="async" alt="Career timeline: 2004 Turkcell, Operations Manager with teams up to 150; 2010 KKTCELL, built customer operations from zero; 2012 remote software contracts; 2020 UDM Marketing, agency and Amazon store; 2023 freelance Python and AI developer.">
+      </picture>
       <ol class="career">
         <li>
           <div>
