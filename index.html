@@ -242,8 +242,8 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#work">Work</a></li>
         <li><a href="#heresin">Heresin</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#capabilities">Capabilities</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -386,6 +386,44 @@
     </div>
   </section>
 
+  <section class="block follow" id="heresin">
+    <div class="wrap">
+      <div class="head">
+        <h2>Featured: Heresin</h2>
+        <p>A personal AI assistant I run 24/7 on my own Mac Studio (Apple M5 Max, 36 GB). I set its goals, safety rules and acceptance tests, and build it with Claude Code as my AI pair programmer. The code is private; I am glad to walk through it.</p>
+      </div>
+      <div class="stats" aria-label="Key numbers">
+        <div><b>832</b><span>automated tests, all passing</span></div>
+        <div><b>0.93</b><span>retrieval MRR (keyword-only: 0.71)</span></div>
+        <div><b>50/50</b><span>latest daily personal exam (49 or 50 on recent days)</span></div>
+        <div><b>60/60</b><span>Turkish ↔ English retrieval</span></div>
+      </div>
+      <div class="caps skills">
+        <div>
+          <h3>RAG</h3>
+          <ul><li>Keywords + embeddings</li><li>int8 vector index</li><li>Local cross-encoder reranker</li><li>Reads the source notes, not only extracted facts</li><li>232,000+ memories</li></ul>
+        </div>
+        <div>
+          <h3>Agents + MCP</h3>
+          <ul><li>Agent loop with tools</li><li>Shell in a macOS sandbox: no network, no home folder, no secrets</li><li>Permission gate and kill switch</li><li>Budget reservation</li><li>MCP client</li></ul>
+        </div>
+        <div>
+          <h3>Context engineering</h3>
+          <ul><li>Code decides what each model sees</li><li>Personal data stays on the local model</li><li>Untrusted text labelled as data</li><li>Local → free → paid routing with spending caps</li></ul>
+        </div>
+        <div>
+          <h3>LLM evaluation</h3>
+          <ul><li>Daily exam through the real chat path</li><li>Cross-lingual retrieval check</li><li>Recall suites</li><li>Models switched only on benchmark results</li></ul>
+        </div>
+        <div>
+          <h3>Harness engineering</h3>
+          <ul><li>Test gate before every install</li><li>Agent-safety evals</li><li>Append-only audit log</li><li>Encrypted storage (SQLCipher)</li><li>A lower score never ships</li></ul>
+        </div>
+      </div>
+      <p class="stackline">Python (standard library first) · SQLCipher · Ollama and llama.cpp: Qwen 3.8 27B, Qwen3-Coder 30B, EmbeddingGemma 2, BGE reranker v2 m3 · macOS sandbox-exec · launchd</p>
+    </div>
+  </section>
+
   <section class="block follow" id="work">
     <div class="wrap">
       <div class="head">
@@ -444,10 +482,10 @@
         <article class="tile">
           <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><g class="line"><path d="M100 50 52 26M100 50 54 76M100 50 150 22M100 50 152 74M100 50 176 50M52 26 54 76M150 22 176 50 152 74"/></g><g class="node"><circle cx="52" cy="26" r="7"/><circle cx="54" cy="76" r="7"/><circle cx="150" cy="22" r="7"/><circle cx="152" cy="74" r="7"/><circle cx="176" cy="50" r="6"/></g><circle class="fill" cx="100" cy="50" r="13"/></svg></div>
           <p class="kind">AI system</p>
-          <h3>Heresin</h3>
-          <p class="what">A local-first personal AI system on my own Mac Studio: it learns every day, answers from source-linked memory, runs sandboxed tools and is tested daily.</p>
-          <p class="stack">RAG, agents + MCP, LLM evaluation</p>
-          <a class="go" href="#heresin">How it works</a>
+          <h3>Personal AI Assistant</h3>
+          <p class="what">A local-first AI assistant running 24/7 on my own hardware, with source-linked memory, one-command agents and strict spending limits.</p>
+          <p class="stack">Python, LLM agents, encryption</p>
+          <p class="private">Private, demo on request</p>
         </article>
         <article class="tile">
           <div class="art" aria-hidden="true"><svg viewBox="0 0 200 100"><path class="line" d="M14 56H58L68 34 80 74 92 44 100 56H136"/><path class="dash" d="M136 56H150"/><path class="bell" d="M168 30a12 12 0 0 1 12 12v12l5 7h-34l5-7V42a12 12 0 0 1 12-12Z"/><path class="line a" d="M163 66a5 5 0 0 0 10 0"/><circle class="fill" cx="180" cy="30" r="5"/></svg></div>
@@ -458,44 +496,6 @@
           <p class="private">Private, demo on request</p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="block follow" id="heresin">
-    <div class="wrap">
-      <div class="head">
-        <h2>Heresin, in depth</h2>
-        <p>A personal AI assistant I run 24/7 on my own Mac Studio (Apple M5 Max, 36 GB). I set its goals, safety rules and acceptance tests, and build it with Claude Code as my AI pair programmer. The code is private; I am glad to walk through it.</p>
-      </div>
-      <div class="stats" aria-label="Key numbers">
-        <div><b>832</b><span>automated tests, all passing</span></div>
-        <div><b>0.93</b><span>retrieval MRR (keyword-only: 0.71)</span></div>
-        <div><b>50/50</b><span>latest daily personal exam (49 or 50 on recent days)</span></div>
-        <div><b>60/60</b><span>Turkish ↔ English retrieval</span></div>
-      </div>
-      <div class="caps skills">
-        <div>
-          <h3>RAG</h3>
-          <ul><li>Keywords + embeddings</li><li>int8 vector index</li><li>Local cross-encoder reranker</li><li>Reads the source notes, not only extracted facts</li><li>232,000+ memories</li></ul>
-        </div>
-        <div>
-          <h3>Agents + MCP</h3>
-          <ul><li>Agent loop with tools</li><li>Shell in a macOS sandbox: no network, no home folder, no secrets</li><li>Permission gate and kill switch</li><li>Budget reservation</li><li>MCP client</li></ul>
-        </div>
-        <div>
-          <h3>Context engineering</h3>
-          <ul><li>Code decides what each model sees</li><li>Personal data stays on the local model</li><li>Untrusted text labelled as data</li><li>Local → free → paid routing with spending caps</li></ul>
-        </div>
-        <div>
-          <h3>LLM evaluation</h3>
-          <ul><li>Daily exam through the real chat path</li><li>Cross-lingual retrieval check</li><li>Recall suites</li><li>Models switched only on benchmark results</li></ul>
-        </div>
-        <div>
-          <h3>Harness engineering</h3>
-          <ul><li>Test gate before every install</li><li>Agent-safety evals</li><li>Append-only audit log</li><li>Encrypted storage (SQLCipher)</li><li>A lower score never ships</li></ul>
-        </div>
-      </div>
-      <p class="stackline">Python (standard library first) · SQLCipher · Ollama and llama.cpp: Qwen 3.8 27B, Qwen3-Coder 30B, EmbeddingGemma 2, BGE reranker v2 m3 · macOS sandbox-exec · launchd</p>
     </div>
   </section>
 
